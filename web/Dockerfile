@@ -13,7 +13,8 @@ RUN \
 	mv /usr/share/jitsi-meet/interface_config.js /defaults && \
 	apt-cleanup && \
 	rm -f /etc/nginx/conf.d/default.conf && \
-	rm -rf /tmp/pkg /var/cache/apt
+	rm -rf /tmp/pkg /var/cache/apt && \
+    sed -i 's/".*"/"\/jitsi\/"/' /usr/share/jitsi-meet/base.html
 
 EXPOSE 80 443
 
